@@ -6,9 +6,9 @@ function Form() {
         <section className="form-usr">
             < form >
                 <h2>Rellena el formulario para crear el colaborador.</h2>
-                <TextField />
-                <TextField />
-                <TextField />
+                <TextField input_label="Nombre" placeholder="Ingresar nombre" />
+                <TextField input_label="Puesto" placeholder="Ingresar puesto" />
+                <TextField input_label="Foto" placeholder="Ingresar enlace de foto" />
             </form >
         </section >
     );

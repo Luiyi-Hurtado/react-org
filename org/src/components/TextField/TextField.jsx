@@ -1,10 +1,11 @@
 import './TextField.css'
 
-function TextField() {
+function TextField(props) {
+    const placeholderModify = `${props.placeholder}...`
     return (
         <div className='text-field'>
-            <label>Nombre</label>
-            <input placeholder='Ingresar nombre' />
+            <label>{props.input_label}</label>
+            <input placeholder={placeholderModify} />
         </div>
     );
 }
