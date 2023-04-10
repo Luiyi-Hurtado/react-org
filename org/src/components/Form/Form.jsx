@@ -1,5 +1,6 @@
 import "./Form.css";
 import TextField from "../TextField/TextField";
+import OptionList from "../OptionList/OptionList";
 
 function Form() {
     return (
@@ -9,6 +10,7 @@ function Form() {
                 <TextField input_label="Nombre" placeholder="Ingresar nombre" />
                 <TextField input_label="Puesto" placeholder="Ingresar puesto" />
                 <TextField input_label="Foto" placeholder="Ingresar enlace de foto" />
+                <OptionList />
             </form >
         </section >
     );
