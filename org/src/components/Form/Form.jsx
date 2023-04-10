@@ -1,6 +1,6 @@
 import "./Form.css"
 
-const Form = () => {
+function Form() {
     return (
         <section className="form-usr">
             < form >
