@@ -1,5 +1,6 @@
 import Header from './components/Header/Header';
 import Form from './components/Form/Form';
+import MyOrg from './components/MyOrg/MyOrg';
 import './App.css';
 
 function App() {
@@ -7,6 +8,7 @@ function App() {
     <div>
       <Header />
       <Form />
+      <MyOrg />
     </div>
   );
 }
