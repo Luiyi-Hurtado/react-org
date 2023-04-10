@@ -1,4 +1,4 @@
-import './TextField.css'
+import './TextField.css';
 
 function TextField(props) {
     const placeholderModify = `${props.placeholder}...`
@@ -10,4 +10,4 @@ function TextField(props) {
     );
 }
 
-export default TextField
+export default TextField;

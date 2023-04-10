@@ -1,4 +1,4 @@
-import "./Form.css"
+import "./Form.css";
 import TextField from "../TextField/TextField";
 
 function Form() {
@@ -14,4 +14,4 @@ function Form() {
     );
 }
 
-export default Form
+export default Form;
