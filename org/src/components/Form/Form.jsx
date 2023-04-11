@@ -9,6 +9,7 @@ function Form() {
     const [name, setName] = useState("")
     const [position, setPosition] = useState("")
     const [photo, setPhoto] = useState("")
+    const [team, setTeam] = useState("")
 
     const sendManagement = (e) => {
         e.preventDefault()
@@ -16,6 +17,7 @@ function Form() {
             name,
             position,
             photo,
+            team
         }
         console.log(sendData)
     }
@@ -45,7 +47,10 @@ function Form() {
                     value={photo}
                     setValue={setPhoto}
                 />
-                <OptionList />
+                <OptionList
+                    value={team}
+                    setTeam={setTeam}
+                />
                 <Button button_label="Crear" />
             </form >
         </section >
