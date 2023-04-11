@@ -66,7 +66,9 @@ function App() {
         : <></>
       }
       <MyOrg changeShow={changeShow} />
-      {teams.map((team, index) => <Team teamData={team} key={index} colaborators={colaborators} />)}
+      {teams.map((team, index) => <Team teamData={team} key={index}
+        colaborators={colaborators.filter(colaborator => colaborator.team === team.title)}
+      />)}
     </div>
   );
 }

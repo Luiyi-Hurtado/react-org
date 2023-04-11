@@ -8,12 +8,14 @@ const Team = (props) => {
     const styleTitle = { borderBottomColor: primaryColor }
 
     return (
-        <section className="team" style={styleBackground}>
-            <h3 style={styleTitle}>{title}</h3>
-            <div className="colaborators">
-                {colaborators.map((colaborator, index) => <Colaborator data={colaborator} key={index} />)}
-            </div>
-        </section>
+        <>
+            {colaborators.length > 0 && < section className="team" style={styleBackground} >
+                <h3 style={styleTitle}>{title}</h3>
+                <div className="colaborators">
+                    {colaborators.map((colaborator, index) => <Colaborator data={colaborator} key={index} />)}
+                </div>
+            </section >}
+        </>
     );
 }
 
