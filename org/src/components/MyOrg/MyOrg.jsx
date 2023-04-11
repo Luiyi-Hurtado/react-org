@@ -1,7 +1,6 @@
 import "./MyOrg.css";
 
 function MyOrg(props) {
-
     return (
         <section className="org-section">
             <h3 className="org-title">Mi Organización</h3>

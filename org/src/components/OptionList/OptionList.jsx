@@ -1,7 +1,6 @@
 import "./OptionList.css";
 
 function OptionList(props) {
-
     const { teams, value } = props
 
     const changeManagement = (e) => {

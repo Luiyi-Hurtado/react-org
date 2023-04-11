@@ -7,11 +7,17 @@ import './App.css';
 
 function App() {
   const [showForm, updateShowForm] = useState(false)
-
+  const [colaborators, setColaborators] = useState([])
+  // Show form or not show
   function changeShow() {
     updateShowForm(!showForm);
   }
-
+  // Register colaborator
+  function registerColab(colaborator) {
+    console.log("New Colaborator", colaborator)
+    setColaborators([...colaborators, colaborator])
+  }
+  // team list
   const teams = [
     {
       title: "Programación",
@@ -53,8 +59,10 @@ function App() {
   return (
     <div>
       <Header />
-      {showForm ? <Form teams={teams.map((team) => team.title)} /> : <></>}
-      {/* {showForm && <Form />} */}
+      {showForm
+        ? <Form teams={teams.map((team) => team.title)} registerColab={registerColab} />
+        : <></>
+      }
       <MyOrg changeShow={changeShow} />
       {teams.map((team) => <Team teamData={team} key={team.title} />)}
     </div>

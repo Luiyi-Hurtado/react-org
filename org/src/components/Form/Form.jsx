@@ -5,12 +5,11 @@ import OptionList from "../OptionList/OptionList";
 import Button from "../Button/Button";
 
 function Form(props) {
-
     const [name, setName] = useState("")
     const [position, setPosition] = useState("")
     const [photo, setPhoto] = useState("")
     const [team, setTeam] = useState("")
-    const { teams } = props
+    const { teams, registerColab } = props
 
     const sendManagement = (e) => {
         e.preventDefault()
@@ -20,7 +19,7 @@ function Form(props) {
             photo,
             team
         }
-        console.log(sendData)
+        registerColab(sendData)
     }
 
     return (
