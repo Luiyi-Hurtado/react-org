@@ -4,12 +4,13 @@ import TextField from "../TextField/TextField";
 import OptionList from "../OptionList/OptionList";
 import Button from "../Button/Button";
 
-function Form() {
+function Form(props) {
 
     const [name, setName] = useState("")
     const [position, setPosition] = useState("")
     const [photo, setPhoto] = useState("")
     const [team, setTeam] = useState("")
+    const { teams } = props
 
     const sendManagement = (e) => {
         e.preventDefault()
@@ -50,6 +51,7 @@ function Form() {
                 <OptionList
                     value={team}
                     setTeam={setTeam}
+                    teams={teams}
                 />
                 <Button button_label="Crear" />
             </form >

@@ -53,10 +53,10 @@ function App() {
   return (
     <div>
       <Header />
-      {showForm ? <Form /> : <></>}
+      {showForm ? <Form teams={teams.map((team) => team.title)} /> : <></>}
       {/* {showForm && <Form />} */}
       <MyOrg changeShow={changeShow} />
-      {teams.map((team, index) => <Team teamData={team} key={index} />)}
+      {teams.map((team) => <Team teamData={team} key={team.title} />)}
     </div>
   );
 }
