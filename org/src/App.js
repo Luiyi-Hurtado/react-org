@@ -60,7 +60,9 @@ function App() {
     <div>
       <Header />
       {showForm
-        ? <Form teams={teams.map((team) => team.title)} registerColab={registerColab} />
+        ? <Form
+          teams={teams.map((team) => team.title)}
+          registerColab={registerColab} />
         : <></>
       }
       <MyOrg changeShow={changeShow} />
