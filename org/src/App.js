@@ -3,6 +3,7 @@ import Header from './components/Header/Header';
 import Form from './components/Form/Form';
 import MyOrg from './components/MyOrg/MyOrg';
 import Team from './components/Team/Team';
+import Footer from './components/Footer/Footer';
 import './App.css';
 
 function App() {
@@ -69,6 +70,7 @@ function App() {
       {teams.map((team, index) => <Team teamData={team} key={index}
         colaborators={colaborators.filter(colaborator => colaborator.team === team.title)}
       />)}
+      <Footer />
     </div>
   );
 }

@@ -12,7 +12,10 @@ const Team = (props) => {
             {colaborators.length > 0 && < section className="team" style={styleBackground} >
                 <h3 style={styleTitle}>{title}</h3>
                 <div className="colaborators">
-                    {colaborators.map((colaborator, index) => <Colaborator data={colaborator} key={index} />)}
+                    {colaborators.map((colaborator, index) => <Colaborator
+                        data={colaborator}
+                        key={index}
+                        primaryColor={primaryColor} />)}
                 </div>
             </section >}
         </>
