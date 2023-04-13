@@ -9,7 +9,9 @@ function Form(props) {
     const [position, setPosition] = useState("")
     const [photo, setPhoto] = useState("")
     const [team, setTeam] = useState("")
-    const { teams, registerColab } = props
+    const [title, setTitle] = useState("")
+    const [color, setColor] = useState("")
+    const { teams, registerColab, createTeam } = props
 
     const sendManagement = (e) => {
         e.preventDefault()
@@ -22,9 +24,13 @@ function Form(props) {
         registerColab(sendData)
     }
 
+    function manageNewTeam(e) {
+        e.preventDefault()
+        createTeam({ title, primaryColor: color })
+    }
     return (
         <section className="form-usr">
-            < form onSubmit={sendManagement}>
+            <form onSubmit={sendManagement}>
                 <h2>Rellena el formulario para crear el colaborador.</h2>
                 <TextField
                     input_label="Nombre"
@@ -54,6 +60,24 @@ function Form(props) {
                 />
                 <Button button_label="Crear" />
             </form >
+            <form onSubmit={manageNewTeam}>
+                <h2>Rellena el formulario para crear el equipo.</h2>
+                <TextField
+                    input_label="Titulo"
+                    placeholder="Ingresar Titulo"
+                    required
+                    value={title}
+                    setValue={setTitle}
+                />
+                <TextField
+                    input_label="Color"
+                    placeholder="Ingresar el color en HEX"
+                    required
+                    value={color}
+                    setValue={setColor}
+                />
+                <Button button_label="Registrar equipo" />
+            </form>
         </section >
     );
 }

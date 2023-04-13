@@ -3,6 +3,7 @@
     padding: 32px;
     box-sizing: border-box;
     text-align: center;
+    position: relative;
 }
 
 .team h3 {
@@ -19,4 +20,12 @@
     display: flex;
     justify-content: space-evenly;
     flex-wrap: wrap;
+}
+
+.color-input {
+    top: 20px;
+    right: 50px;
+    position: absolute;
+    background-color: transparent;
+    border: 0;
 }
