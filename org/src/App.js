@@ -105,7 +105,7 @@ function App() {
   }
   // Delete Colaborator
   function deleteColab(id) {
-    const newColab = colaborators.filter((colab) => colab.id = !id)
+    const newColab = colaborators.filter((colab) => colab.id !== id)
     setColaborators(newColab)
   }
   // Update team color
