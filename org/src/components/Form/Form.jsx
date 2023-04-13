@@ -1,6 +1,6 @@
 import { useState } from "react";
 import "./Form.css";
-import TextField from "../TextField/TextField";
+import Field from "../Field/Field";
 import OptionList from "../OptionList/OptionList";
 import Button from "../Button/Button";
 
@@ -29,24 +29,24 @@ function Form(props) {
         createTeam({ title, primaryColor: color })
     }
     return (
-        <section className="form-usr">
+        <section className="form">
             <form onSubmit={sendManagement}>
                 <h2>Rellena el formulario para crear el colaborador.</h2>
-                <TextField
+                <Field
                     input_label="Nombre"
                     placeholder="Ingresar nombre"
                     required
                     value={name}
                     setValue={setName}
                 />
-                <TextField
+                <Field
                     input_label="Puesto"
                     placeholder="Ingresar puesto"
                     required
                     value={position}
                     setValue={setPosition}
                 />
-                <TextField
+                <Field
                     input_label="Foto"
                     placeholder="Ingresar enlace de foto"
                     required
@@ -62,19 +62,20 @@ function Form(props) {
             </form >
             <form onSubmit={manageNewTeam}>
                 <h2>Rellena el formulario para crear el equipo.</h2>
-                <TextField
+                <Field
                     input_label="Titulo"
                     placeholder="Ingresar Titulo"
                     required
                     value={title}
                     setValue={setTitle}
                 />
-                <TextField
+                <Field
                     input_label="Color"
                     placeholder="Ingresar el color en HEX"
                     required
                     value={color}
                     setValue={setColor}
+                    type="color"
                 />
                 <Button button_label="Registrar equipo" />
             </form>

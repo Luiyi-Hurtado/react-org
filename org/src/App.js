@@ -8,7 +8,7 @@ import Footer from './components/Footer/Footer';
 import './App.css';
 
 function App() {
-  const [showForm, updateShowForm] = useState(false)
+  const [showForm, updateShowForm] = useState(true)
   const [colaborators, setColaborators] = useState([{
     id: uuidv4(),
     team: "Front End",
@@ -95,12 +95,10 @@ function App() {
   }
   // Register colaborator
   function registerColab(colaborator) {
-    console.log("New Colaborator", colaborator)
     setColaborators([...colaborators, colaborator])
   }
   // Delete Colaborator
   function deleteColab(id) {
-    console.log(`eliminiar colaborador ${id}`)
     const newColab = colaborators.filter((colab) => colab.id != id)
     setColaborators(newColab)
   }
