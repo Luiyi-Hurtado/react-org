@@ -14,35 +14,41 @@ function App() {
     team: "Front End",
     photo: "https://github.com/harlandlohora.png",
     name: "Harland Lohora",
-    position: "Instructor"
+    position: "Instructor",
+    favorite: true
   },
   {
     id: uuidv4(),
     team: "Programación",
     photo: "https://github.com/genesysaluralatam.png",
     name: "Genesys Rondón",
-    position: "Desarrolladora de Software e Instructora"
+    position: "Desarrolladora de Software e Instructora",
+    favorite: true
+
   },
   {
     id: uuidv4(),
     team: "UX y Diseño",
     photo: "https://github.com/JeanmarieAluraLatam.png",
     name: "Jeanmarie Quijada",
-    position: "Instructora en Alura Latam"
+    position: "Instructora en Alura Latam",
+    favorite: false
   },
   {
     id: uuidv4(),
     photo: "https://github.com/christianpva.png",
     team: "Programación",
     name: "Christian Velasco",
-    position: "Head de Alura e Instructor"
+    position: "Head de Alura e Instructor",
+    favorite: true
   },
   {
     id: uuidv4(),
     team: "Innovación y Gestión",
     photo: "https://github.com/JoseDarioGonzalezCha.png",
     name: "Jose Gonzales",
-    position: "Dev Fullstack"
+    position: "Dev Fullstack",
+    favorite: false
   }])
   const [teams, setTeams] = useState([
     // team list
@@ -99,12 +105,11 @@ function App() {
   }
   // Delete Colaborator
   function deleteColab(id) {
-    const newColab = colaborators.filter((colab) => colab.id != id)
+    const newColab = colaborators.filter((colab) => colab.id = !id)
     setColaborators(newColab)
   }
   // Update team color
   function setTeamColor(color, id) {
-    console.log(`Actualizar: ${color}, ${id}`)
     const updateTeams = teams.map((team) => {
       if (team.id === id) {
         team.primaryColor = color
@@ -115,8 +120,17 @@ function App() {
   }
   // create Team
   function createTeam(newTeam) {
-    console.log(newTeam)
     setTeams([...teams, { ...newTeam, id: uuidv4() }])
+  }
+  // Add Fav
+  function like(id) {
+    const likeColaborators = colaborators.map((colab) => {
+      if (colab.id === id) {
+        colab.favorite = !colab.favorite
+      }
+      return colab
+    })
+    setColaborators(likeColaborators)
   }
   // return "page"
   return (
@@ -132,6 +146,7 @@ function App() {
         colaborators={colaborators.filter(colaborator => colaborator.team === team.title)}
         deleteColab={deleteColab}
         setTeamColor={setTeamColor}
+        like={like}
       />)
       }
       <Footer />

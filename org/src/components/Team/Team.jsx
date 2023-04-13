@@ -3,8 +3,8 @@ import Colaborator from "../Colaborator/Colaborator";
 import "./Team.css";
 
 const Team = (props) => {
-    const { title, primaryColor, secondaryColor, id } = props.teamData
-    const { colaborators, deleteColab, setTeamColor } = props
+    const { title, primaryColor, id } = props.teamData
+    const { colaborators, deleteColab, setTeamColor, like } = props
     const styleBackground = { backgroundColor: hexToRgba(primaryColor, 0.6) }
     const titleLine = { borderBottomColor: primaryColor }
 
@@ -26,6 +26,7 @@ const Team = (props) => {
                         key={index}
                         primaryColor={primaryColor}
                         deleteColab={deleteColab}
+                        like={like}
                     />)}
                 </div>
             </section >}
